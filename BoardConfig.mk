@@ -30,7 +30,7 @@
 TARGET_OTA_ASSERT_DEVICE := j5lte,j5ltexx,SM-J500F
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_j5nlte_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_j5lte_defconfig
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
