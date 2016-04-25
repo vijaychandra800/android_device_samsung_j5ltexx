@@ -68,6 +68,21 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.device", "j5lte");
         init_dsds();
     }
+    else if (strstr(bootloader, "J500M")) {
+       property_set("ro.product.model", "SM-J500M");
+       property_set("ro.product.device", "j5lte");
+       init_dsds();
+    }
+    else if (strstr(bootloader, "J500H")) {
+       property_set("ro.product.model", "SM-J500H");
+       property_set("ro.product.device", "j5lte");
+       init_dsds();
+    }
+    else if (strstr(bootloader, "J5008")) {
+       property_set("ro.product.model", "SM-J5008");
+       property_set("ro.product.device", "j5lte");
+       init_dsds();
+    }
 
     property_get("ro.product.device", device);
     strlcpy(devicename, device, sizeof(devicename));
