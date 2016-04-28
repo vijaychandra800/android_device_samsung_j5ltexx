@@ -68,7 +68,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.device", "j5lte");
         
         init_dsds();
-    }else if (strstr(bootloader, "J500M")) {
+    } else if (strstr(bootloader, "J500M")) {
        /* SM-J500M */
        property_set("ro.product.model", "SM-J500M");
        property_set("ro.build.fingerprint", "samsung/j5ltexx/j5lte:5.1.1/LMY48B/J500MUBU1APD1:user/release-keys");
@@ -76,15 +76,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
        property_set("ro.product.device", "j5lte");
        
        init_dsds();
-    }else if (strstr(bootloader, "J500H")) {
-       /* SM-J500H */
-       property_set("ro.build.fingerprint", "samsung/j5ltexx/j5lte:5.1.1/LMY48B/J500HXXU1APA5:user/release-keys");
-       property_set("ro.build.description", "j5ltexx-user 5.1.1 LMY48B J500HXXU1APA5 release-keys");
-       property_set("ro.product.model", "SM-J500H");
-       property_set("ro.product.device", "j5lte");
-       
-       init_dsds();
-    }else if (strstr(bootloader, "J5008")) {
+    } else if (strstr(bootloader, "J5008")) {
        /* SM-J5008 */
        property_set("ro.build.fingerprint", "samsung/j5ltexx/j5lte:5.1.1/LMY48B/J5008ZMU1AOL1:user/release-keys");
        property_set("ro.build.description", "j5ltexx-user 5.1.1 LMY48B J5008ZMU1AOL1 release-keys");
