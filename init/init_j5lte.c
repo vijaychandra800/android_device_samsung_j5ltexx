@@ -84,6 +84,14 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
        property_set("ro.product.device", "j5lte");
        
        init_dsds();
+    } else if (strstr(bootloader, "J500G")) {
+       /* SM-J500G */
+       property_set("ro.build.fingerprint", "samsung/j5ltedx/j5lte:5.1.1/LMY48B/J500GXXU1AOL1:user/release-keys");
+       property_set("ro.build.description", "j5ltedx-user 5.1.1 LMY48B J500GXXU1AOL1 release-keys");
+       property_set("ro.product.model", "SM-J500G");
+       property_set("ro.product.device", "j5lte");
+       
+       init_dsds();
     }
 
     property_get("ro.product.device", device);
