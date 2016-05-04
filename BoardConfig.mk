@@ -27,7 +27,6 @@
 -include vendor/samsung/j5ltexx/BoardConfigVendor.mk
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/samsung/j5lte
 TARGET_KERNEL_CONFIG := cyanogenmod_j5nlte_defconfig
 
 # Vendor Init
