@@ -24,6 +24,8 @@ TARGET_SCREEN_WIDTH := 720
 DEVICE_PACKAGE_OVERLAYS += device/samsung/j5ltexx/overlay
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.lte_vrte_ltd=1 \
+    telephony.lteOnCdmaDevice=0 \
     rild.libpath2=/system/lib/libsec-ril-dsds.so \
     ro.telephony.default_network=9
 
