@@ -37,9 +37,9 @@
 #include "init_msm.h"
 
 void init_dsds() {
-     property_set("ro.multisim.set_audio_params", "true");
-     property_set("ro.multisim.simslotcount", "2");
-     property_set("persist.radio.multisim.config", "dsds");
+    property_set("ro.multisim.set_audio_params", "true");
+    property_set("ro.multisim.simslotcount", "2");
+    property_set("persist.radio.multisim.config", "dsds");
 }
 
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
@@ -61,7 +61,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     property_get("ro.bootloader", bootloader);
 
     if (strstr(bootloader, "J500F")) {
-        /* SM-J500F dual sim variant */
+        /* SM-J500F */
         property_set("ro.build.fingerprint", "samsung/j5ltexx/j5lte:5.1.1/LMY48B/J500FXXU1AOL3:user/release-keys");
         property_set("ro.build.description", "j5ltexx-user 5.1.1 LMY48B J500FXXU1AOL3 release-keys");
         property_set("ro.product.model", "SM-J500F");
