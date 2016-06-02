@@ -23,9 +23,6 @@ TARGET_SCREEN_WIDTH := 720
 # Device overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/j5ltexx/overlay
 
-# NFC
-BOARD_NFC_CHIPSET := pn547
-
 # NFC packages
 PRODUCT_PACKAGES += \
     libnfc_nci \
