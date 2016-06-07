@@ -40,6 +40,7 @@ TARGET_KERNEL_SOURCE := kernel/samsung/j5lte
 
 # NFC
 BOARD_HAVE_NFC := true
+TARGET_HAS_NFC_CUSTOM_CONFIG := true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := j5lte
