@@ -20,6 +20,10 @@ $(call inherit-product-if-exists, vendor/samsung/j5ltexx/j5ltexx-vendor.mk)
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
+# Screen density
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
 # Device overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/j5ltexx/overlay
 
