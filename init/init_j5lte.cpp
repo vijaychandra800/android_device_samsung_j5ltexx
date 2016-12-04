@@ -26,84 +26,12 @@
  */
 
 #include <stdlib.h>
-#include <fcntl.h>
 #include <stdio.h>
-#include <sys/stat.h>
-#include <sys/types.h>
 
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
-
-#include "init_msm8916.h"
-
-__attribute__ ((weak))
-void init_target_properties()
-{
-}
-
-static int read_file2(const char *fname, char *data, int max_size)
-{
-    int fd, rc;
-
-    if (max_size < 1)
-        return 0;
-
-    fd = open(fname, O_RDONLY);
-    if (fd < 0) {
-        ERROR("failed to open '%s'\n", fname);
-        return 0;
-    }
-
-    rc = read(fd, data, max_size - 1);
-    if ((rc > 0) && (rc < max_size))
-        data[rc] = '\0';
-    else
-        data[0] = '\0';
-    close(fd);
-
-    return 1;
-}
-
-static void init_alarm_boot_properties()
-{
-    char const *alarm_file = "/proc/sys/kernel/boot_reason";
-    char buf[64];
-    char tmp[PROP_VALUE_MAX];
-
-    property_get("ro.boot.alarmboot", tmp);
-
-    if (read_file2(alarm_file, buf, sizeof(buf))) {
-        /*
-         * Setup ro.alarm_boot value to true when it is RTC triggered boot up
-         * For existing PMIC chips, the following mapping applies
-         * for the value of boot_reason:
-         *
-         * 0 -> unknown
-         * 1 -> hard reset
-         * 2 -> sudden momentary power loss (SMPL)
-         * 3 -> real time clock (RTC)
-         * 4 -> DC charger inserted
-         * 5 -> USB charger insertd
-         * 6 -> PON1 pin toggled (for secondary PMICs)
-         * 7 -> CBLPWR_N pin toggled (for external power supply)
-         * 8 -> KPDPWR_N pin toggled (power key pressed)
-         */
-        if (buf[0] == '3' || !strcmp(tmp, "true"))
-            property_set("ro.alarm_boot", "true");
-        else
-            property_set("ro.alarm_boot", "false");
-    }
-}
-
-void vendor_load_properties()
-{
-    init_target_properties();
-    init_alarm_boot_properties();
-}
-
-#define ISMATCH(a,b)    (!strncmp(a,b,PROP_VALUE_MAX))
 
 void init_dsds() {
    property_set("ro.multisim.set_audio_params", "true");
@@ -111,21 +39,15 @@ void init_dsds() {
    property_set("persist.radio.multisim.config", "dsds");
 }
 
-void vendor_load_properties()
+void init_target_properties()
 {
-   char platform[PROP_VALUE_MAX];
-   char bootloader[PROP_VALUE_MAX];
-   char device[PROP_VALUE_MAX];
-   char devicename[PROP_VALUE_MAX];
-   int rc;
-
-   rc = property_get("ro.board.platform", platform);
-   if (!rc || !ISMATCH(platform, ANDROID_TARGET))
+  std::string platform = property_get("ro.board.platform");
+    if (platform != ANDROID_TARGET)
       return;
 
-   property_get("ro.bootloader", bootloader);
+   std::string bootloader = property_get("ro.bootloader");
 
-   if (strstr(bootloader, "J500F")) {
+   if (bootloader.find("G900W8") == 0) {
       /* SM-J500F */
       property_set("ro.build.fingerprint", "samsung/j5ltexx/j5lte:6.0.1/MMB29M/J500FXXU1BPF4:user/release-keys");
       property_set("ro.build.description", "j5ltexx-user 6.0.1 MMB29M J500FXXU1BPF4 release-keys");
@@ -135,7 +57,6 @@ void vendor_load_properties()
       init_dsds();
    }
 
-   property_get("ro.product.device", device);
-   strlcpy(devicename, device, sizeof(devicename));
-   INFO("Found bootloader id %s setting build properties for %s device\n", bootloader, devicename);
+   std::string device = property_get("ro.product.device");
+    INFO("Found bootloader id %s setting build properties for %s device\n", bootloader.c_str(), device.c_str());
 }
