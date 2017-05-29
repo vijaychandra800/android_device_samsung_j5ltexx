@@ -29,6 +29,9 @@
 # Audio
 AUDIO_FEATURE_SAMSUNG_DUAL_SIM := true
 
+# Power
+TARGET_POWERHAL_HEADER_PATH := device/samsung/j5ltexx/power
+
 # Radio
 SIM_COUNT := 2
 TARGET_GLOBAL_CFLAGS += -DANDROID_MULTI_SIM
@@ -47,8 +50,11 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 5016350720
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# NFC
+BOARD_NFC_DEVICE := "/dev/pn547"
+
 # Assert
-TARGET_OTA_ASSERT_DEVICE := j5lte
+TARGET_OTA_ASSERT_DEVICE := j5lte,j5nlte,j5lteub,j5ltedx,j5yltedo
 
 # Kernel
 TARGET_KERNEL_CONFIG := cyanogenmod_j5nlte_defconfig
@@ -57,4 +63,3 @@ TARGET_KERNEL_SOURCE := kernel/samsung/j5lte
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_j5lte
-TARGET_RECOVERY_DEVICE_MODULES := libinit_j5lte
