@@ -58,36 +58,36 @@ void vendor_load_properties()
 
     if (bootloader.find("J500FN") == 0) {
         /* SM-J500FN */
-        property_set("ro.build.fingerprint", "samsung/j5nltexx/j5nlte:7.1.2/MMB29M/J500FNXXU1BPK3:user/release-keys");
-        property_set("ro.build.description", "j5nltexx-user 7.1.2 MMB29M J500FNXXU1BPK3 release-keys");
+        property_set("ro.build.fingerprint", "samsung/j5nltexx/j5nlte:6.0.1/MMB29M/J500FNXXU1BPK3:user/release-keys");
+        property_set("ro.build.description", "j5nltexx-user 6.0.1 MMB29M J500FNXXU1BPK3 release-keys");
         property_set("ro.product.model", "SM-J500FN");
         property_set("ro.product.device", "j5nlte");
         init_single();
     } else if (bootloader.find("J500Y") == 0) {
         /* SM-J500Y */
-        property_set("ro.build.fingerprint", "samsung/j5nltexx/j5nlte:7.1.2/MMB29M/J500FNXXU1BPK3:user/release-keys");
-        property_set("ro.build.description", "j5nltexx-user 7.1.2 MMB29M J500FNXXU1BPK3 release-keys");
+        property_set("ro.build.fingerprint", "samsung/j5nltexx/j5nlte:6.0.1/MMB29M/J500FNXXU1BPK3:user/release-keys");
+        property_set("ro.build.description", "j5nltexx-user 6.0.1 MMB29M J500FNXXU1BPK3 release-keys");
         property_set("ro.product.model", "SM-J500Y");
         property_set("ro.product.device", "j5yltedo");
         init_single();
     } else if (bootloader.find("J500F") == 0) {
         /* SM-J500Y */
-        property_set("ro.build.fingerprint", "samsung/j5nltexx/j5nlte:7.1.2/MMB29M/J500FNXXU1BPK3:user/release-keys");
-        property_set("ro.build.description", "j5nltexx-user 7.1.2 MMB29M J500FNXXU1BPK3 release-keys");
+        property_set("ro.build.fingerprint", "samsung/j5nltexx/j5nlte:6.0.1/MMB29M/J500FNXXU1BPK3:user/release-keys");
+        property_set("ro.build.description", "j5nltexx-user 6.0.1 MMB29M J500FNXXU1BPK3 release-keys");
         property_set("ro.product.model", "SM-J500F");
         property_set("ro.product.device", "j5lte");
         init_dsds();
     } else if (bootloader.find("J500G") == 0) {
         /* SM-J500Y */
-        property_set("ro.build.fingerprint", "samsung/j5nltexx/j5nlte:7.1.2/MMB29M/J500FNXXU1BPK3:user/release-keys");
-        property_set("ro.build.description", "j5nltexx-user 7.1.2 MMB29M J500FNXXU1BPK3 release-keys");
+        property_set("ro.build.fingerprint", "samsung/j5nltexx/j5nlte:6.0.1/MMB29M/J500FNXXU1BPK3:user/release-keys");
+        property_set("ro.build.description", "j5nltexx-user 6.0.1 MMB29M J500FNXXU1BPK3 release-keys");
         property_set("ro.product.model", "SM-J500G");
         property_set("ro.product.device", "j5lteub");
         init_dsds();
     } else if (bootloader.find("J500M") == 0) {
         /* SM-J500Y */
-        property_set("ro.build.fingerprint", "samsung/j5nltexx/j5nlte:7.1.2/MMB29M/J500FNXXU1BPK3:user/release-keys");
-        property_set("ro.build.description", "j5nltexx-user 7.1.2 MMB29M J500FNXXU1BPK3 release-keys");
+        property_set("ro.build.fingerprint", "samsung/j5nltexx/j5nlte:6.0.1/MMB29M/J500FNXXU1BPK3:user/release-keys");
+        property_set("ro.build.description", "j5nltexx-user 6.0.1 MMB29M J500FNXXU1BPK3 release-keys");
         property_set("ro.product.model", "SM-J500M");
         property_set("ro.product.device", "j5ltedx");
         init_dsds();
