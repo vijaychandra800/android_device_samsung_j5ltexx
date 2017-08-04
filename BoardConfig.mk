@@ -20,17 +20,17 @@
 # definition file).
 #
 
-# Inherit from common j5
--include device/samsung/j5-common/BoardConfigCommon.mk
+# Inherit from common o7lte
+-include device/samsung/o7lte-common/BoardConfigCommon.mk
 
 # Inherit from the proprietary version
--include vendor/samsung/j5ltexx/BoardConfigVendor.mk
+-include vendor/samsung/o7lte/BoardConfigVendor.mk
 
 # Audio
 AUDIO_FEATURE_SAMSUNG_DUAL_SIM := true
 
 # Power
-TARGET_POWERHAL_HEADER_PATH := device/samsung/j5ltexx/power
+TARGET_POWERHAL_HEADER_PATH := device/samsung/o7lte/power
 
 # Radio
 SIM_COUNT := 2
@@ -54,11 +54,11 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_NFC_DEVICE := "/dev/pn547"
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := j5lte,j5nlte,j5lteub,j5ltedx,j5yltedo
+TARGET_OTA_ASSERT_DEVICE := o7lte,o7pro,o7prolte
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_j5nlte_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/j5lte
+TARGET_KERNEL_CONFIG := cyanogenmod_o7lte_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/o7lte
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
